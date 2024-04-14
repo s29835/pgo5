@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Developers extends Employee {
@@ -14,8 +15,20 @@ public class Developers extends Employee {
 
     @Override
     public double calculateSalary() {
-        double salary=super.calculateSalary();
-        salary+=technologies.size();
-        return salary;
+       double salary=super.calculateSalary();
+       LocalDate date=LocalDate.now();
+       double year=date.getYear();
+       double WorkingYears=year - yearWhenEmploy;
+       for(int i=1; i<=WorkingYears; i++){
+           salary+=1000;
+
+           for(Technology technology: technologies){
+               salary+=technology.prem;
+           }
+
+
     }
+
+
+
 }

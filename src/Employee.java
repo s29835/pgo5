@@ -34,17 +34,9 @@ public class Employee {
 
 
     public double calculateSalary(){
+        baseSalary=3000;
         return baseSalary;
     }
 
-    public int DeveloperSalary(){
-        int salary=3000;
-        LocalDate date=LocalDate.now();
-        int year=date.getYear();
-        int WorkingYears = year - yearWhenEmploy;
-        for(int i=1; i<=WorkingYears;i++){
-            salary+=1000;
-        }
-        return salary;
-    }
+
 }
